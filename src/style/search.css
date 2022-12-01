@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  height: 110px;
+  background: #202020;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  height: 100%;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.search {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  background: rgba(204, 204, 204, 0.16);
+  border: 1px solid #cccccc;
+  border-radius: 56px;
+
+  height: 56px;
+  width: 320px;
+  border-radius: 56px;
+  padding: 20px 16px 20px 56px;
+}
+
+.logo {
+  height: 68px;
+  width: 68px;
+}
+
+.lupa {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  cursor: pointer;
+}
+
+.container {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+  padding: 20px 8px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  position: relative;
+}
+
+.img {
+  height: 277px;
+  width: 355px;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  align-items: center;
+  /* height: 100%; */
+  width: 100%;
+  margin: 5px 10px 0 0;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  font-family: Montserrat;
+}
+
+.containerData {
+  display: flex;
+  font-size: 12px;
+  width: 60px;
+  gap: 5px;
+}
+
+
+
+.icons {
+  height: 13px;
+  width: 13px;
+  right: 19px;
+  top: 7px;
+  position: absolute;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.icons:hover{
+  display: block;
+  opacity:0.9;
+  transition:0.9s;
+}
+
+.myButton {
+	background-color:#010508;
+	border-radius:50%;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:13px 20px;
+  bottom:40px;
+  right: 5px;
+  position:fixed;
+  opacity: 0.7;
+}
+
+.myButton:hover{
+  opacity: 1;
+}
+
+
+
+
+h1 {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
