@@ -76,12 +76,27 @@
   object-fit: cover;
 }
 
+.icons {
+  height: 13px;
+  width: 13px;
+  right: 19px;
+  top: 7px;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.containerImgIcons:hover .icons{
+  opacity:0.9;
+  transition: 0.3s ;
+}
+
 .info {
   display: flex;
   justify-content: space-between;
-  /* flex-direction: row; */
+
   align-items: center;
-  /* height: 100%; */
+
   width: 100%;
   margin: 5px 10px 0 0;
 }
@@ -102,21 +117,9 @@
 
 
 
-.icons {
-  height: 13px;
-  width: 13px;
-  right: 19px;
-  top: 7px;
-  position: absolute;
-  opacity: 0.2;
-  cursor: pointer;
-}
 
-.icons:hover{
-  display: block;
-  opacity:0.9;
-  transition:0.9s;
-}
+
+
 
 .myButton {
 	background-color:#010508;
