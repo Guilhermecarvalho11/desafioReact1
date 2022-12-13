@@ -9,7 +9,9 @@ export const GlobalStyleFont = createGlobalStyle`
 
 export const Overlay = styled.div`
 background-color: blue;
-opacity: 0.4;
+/* opacity: 0.1; */
+width: 100vh;
+height: 100vh;
 `;
 
 

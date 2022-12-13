@@ -12,31 +12,25 @@ import {
 import closed from "../../assets/closed.svg";
 
 function Modal(props) {
-  const [visibleModal, setVisibleModal] = useState(true);
-  const openModal = props.open;
-
-  if (openModal === false) {
-    return null;
-  }
-
   function closedModal() {
-    setVisibleModal(!visibleModal);
-    // props.onClose()
-
-    console.log(visibleModal)
+    props.onClose();
   }
 
   return (
     <>
-      <ContainerModal>
-        <Text>Inserir Nova Imagem</Text>
-        <Img src={closed} onClick={closedModal} />
-        <ContainerInput>
-          <InputNome placeholder="Nome" type="text" />
-          <Input placeholder="Url da imagem" type="text" />
-          <Button>Enviar</Button>
-        </ContainerInput>
-      </ContainerModal>
+      {props.open && (
+        <Overlay>
+          <ContainerModal>
+            <Text>Inserir Nova Imagem</Text>
+            <Img src={closed} onClick={closedModal} />
+            <ContainerInput>
+              <InputNome placeholder="Nome" type="text" />
+              <Input placeholder="Url da imagem" type="text" />
+              <Button>Enviar</Button>
+            </ContainerInput>
+          </ContainerModal>
+        </Overlay>
+      )}
     </>
   );
 }
