@@ -26,15 +26,21 @@ function Home() {
     setIsModalOpen(!isModalOpen);
   }
 
+  function deleteImg(id){
+    filterImg.splice(filterImg.indexOf(id),1)
+  
+  }
+
+
   console.log(isModalOpen);
 
   return (
     <div>
       <header className="header">
         <div className="headerContent">
-          <img src={logo} />
+          <img src={logo} alt="logo" />
           <div className="searchContainer">
-            <img src={lupa} className="lupa" onClick={handleSearch} />
+            <img src={lupa} className="lupa" onClick={handleSearch} alt=" icon search"/>
             <input
               className="search"
               placeholder="Buscar"
@@ -52,20 +58,20 @@ function Home() {
             <div className="content" key={lista.id}>
               <div className="containerImgIcons">
                 <div className="icons">
-                  <img src={edit} />
-                  <img src={del} />
+                  <img src={edit} alt="button edit" />
+                  <img src={del} onClick={deleteImg} alt="button remove" />
                 </div>
-                <img className="img" src={lista.url} />
+                <img className="img" src={lista.url}  alt={list.name}/>
               </div>
               <div className="info">
                 <h1>{lista.name}</h1>
                 <div className="data">
                   <div className="containerData">
-                    <img className="like" src={Like} />
+                    <img className="like" src={Like} alt="like" />
                     <strong>{lista.likes}mil</strong>
                   </div>
                   <div className="containerData">
-                    <img className="views" src={views} />
+                    <img className="views" src={views} alt="icon viwes"/>
                     <strong>{lista.views}mil</strong>
                   </div>
                 </div>
