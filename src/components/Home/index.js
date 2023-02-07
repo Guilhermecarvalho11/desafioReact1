@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React, { useState } from "react";
 import "../../style/search.css";
 import lupa from "../../assets/lupa.svg";
@@ -8,11 +9,13 @@ import logo from "../../assets/logo.png";
 import views from "../../assets/views.svg";
 import edit from "../../assets/edit.svg";
 import Modal from "../Modal/index";
+import ModalRemove from "../ModalRemove";
 
 function Home() {
   const [input, setInput] = useState("");
   const [filterImg, setFilterImg] = useState(list);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalDeleteOpen, setIsModalDeleteOPen] = useState(false)
 
   function handleSearch() {
     const filterImgToSave = list.filter((post) =>
@@ -26,6 +29,10 @@ function Home() {
     setIsModalOpen(!isModalOpen);
   }
 
+  function handleModalDelete(){
+    setIsModalDeleteOPen(!isModalDeleteOpen)
+  }
+
   function deleteImg(id){
     filterImg.splice(filterImg.indexOf(id),1)
   
@@ -35,7 +42,7 @@ function Home() {
   console.log(isModalOpen);
 
   return (
-    <div>
+    <>
       <header className="header">
         <div className="headerContent">
           <img src={logo} alt="logo" />
@@ -59,7 +66,11 @@ function Home() {
               <div className="containerImgIcons">
                 <div className="icons">
                   <img src={edit} alt="button edit" />
-                  <img src={del} onClick={deleteImg} alt="button remove" />
+                  <img src={del} alt="button remove" onClick={() => handleModalDelete()} />
+                    <ModalRemove 
+                      open={isModalDeleteOpen}
+                      onClose={() => setIsModalDeleteOPen(false)}
+                  />
                 </div>
                 <img className="img" src={lista.url}  alt={list.name}/>
               </div>
@@ -87,7 +98,7 @@ function Home() {
           onClose={() => setIsModalOpen(false)}
         />
       </div>
-    </div>
+    </>
   );
 }
 

@@ -19,7 +19,7 @@ function Modal(props) {
   return (
     <>
       {props.open && (
-        <Overlay>
+
           <ContainerModal>
             <Text>Inserir Nova Imagem</Text>
             <Img src={closed} onClick={closedModal} />
@@ -29,7 +29,7 @@ function Modal(props) {
               <Button>Enviar</Button>
             </ContainerInput>
           </ContainerModal>
-        </Overlay>
+
       )}
     </>
   );

@@ -15,7 +15,7 @@
 .headerContent {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 87%;
   margin: 0 auto;
   align-items: center;
   height: 100%;
@@ -54,12 +54,9 @@
 }
 
 .container {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 8px;
-  padding: 20px 8px; */
   display: flex;
-  flex-direction: row;
+  padding: 20px;
+  justify-content: space-between;
   flex-wrap: wrap;
 
 }
@@ -67,7 +64,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: 88px;
   position: relative;
 }
 
@@ -116,12 +113,6 @@
   gap: 5px;
 }
 
-
-
-
-
-
-
 .myButton {
 	background-color:#010508;
 	border-radius:50%;
@@ -141,9 +132,6 @@
   opacity: 1;
 }
 
-
-
-
 h1 {
   font-family: Montserrat;
   font-size: 16px;
@@ -151,4 +139,25 @@ h1 {
   line-height: 16px;
   letter-spacing: 0em;
   text-align: left;
+}
+
+
+@media(max-width:1400px){
+  .header{
+    max-width: 100%;
+  }
+
+  .search{
+    width: 230px;
+  }
+
+  .img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+  }
+  .container{
+    max-width: 100%;
+    padding: 0;
+  }
 }

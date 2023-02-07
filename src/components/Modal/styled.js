@@ -7,12 +7,12 @@ export const GlobalStyleFont = createGlobalStyle`
     }
 `;
 
-export const Overlay = styled.div`
+/* export const Overlay = styled.div`
 background-color: blue;
-/* opacity: 0.1; */
+opacity: 0.1; 
 width: 100vh;
 height: 100vh;
-`;
+`;*/
 
 
 export const ContainerModal = styled.div`
@@ -21,11 +21,17 @@ flex-direction: column;
 align-items: center;
 height: 305px;
 width: 433px;
-left: 500px;
-top: 205px;
+left: 700px;
+top: 255px;
 border-radius: 10px;
 background-color: #D9D9D9;
 position: fixed;
+
+@media(max-width:1180px){
+    width: 400px;
+    top: 200px;
+    left: 10px;
+}
 
 `;
 
@@ -107,3 +113,4 @@ position: absolute;
 margin: 8px 8px 275px 403px;
 cursor: pointer;
 `;
+
