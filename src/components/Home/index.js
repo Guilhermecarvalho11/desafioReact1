@@ -67,10 +67,7 @@ function Home() {
                 <div className="icons">
                   <img src={edit} alt="button edit" />
                   <img src={del} alt="button remove" onClick={() => handleModalDelete()} />
-                    <ModalRemove 
-                      open={isModalDeleteOpen}
-                      onClose={() => setIsModalDeleteOPen(false)}
-                  />
+
                 </div>
                 <img className="img" src={lista.url}  alt={list.name}/>
               </div>
@@ -97,6 +94,11 @@ function Home() {
           open={isModalOpen}
           onClose={() => setIsModalOpen(false)}
         />
+
+        <ModalRemove 
+          open={isModalDeleteOpen}
+          onClose={() => setIsModalDeleteOPen(false)}
+          />
       </div>
     </>
   );

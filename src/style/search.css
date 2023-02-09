@@ -55,7 +55,7 @@
 
 .container {
   display: flex;
-  padding: 20px;
+  padding: 0 0px;
   justify-content: space-between;
   flex-wrap: wrap;
 
@@ -159,5 +159,9 @@ h1 {
   .container{
     max-width: 100%;
     padding: 0;
+  }
+
+  .myButton{
+    z-index: 999;
   }
 }

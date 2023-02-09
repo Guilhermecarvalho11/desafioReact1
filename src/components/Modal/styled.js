@@ -24,15 +24,26 @@ width: 433px;
 left: 700px;
 top: 255px;
 border-radius: 10px;
-background-color: #D9D9D9;
+background-color:white;
 position: fixed;
 
 @media(max-width:1180px){
-    width: 400px;
+    width: 200px;
     top: 200px;
-    left: 10px;
+    left: 90px;
+    height: 290px;
 }
+`;
 
+export const Container = styled.div`
+background-color:rgba(0, 0, 0, 0.8);
+position: absolute;
+width: 100%;
+height: 147vh;
+
+@media(max-width:1180px){
+    height: 645vh;
+}
 `;
 
 export const Input = styled.input`
@@ -51,10 +62,23 @@ border: 1px solid #4F4F4F;
 border-radius: 56px;
 margin-top: 20px;
 
+@media(max-width:1180px){
+    width: 180px;
+    top: 200px;
+    left: 10px;
+}
+
+
 `;
 
 export const ContainerInput = styled.div`
 margin: 82px 56px 41px 57px;
+
+@media(max-width:1180px){
+    width: 180px;
+    top: 200px;
+    left: 10px;
+}
 `;
 
 export const InputNome= styled.input`
@@ -73,6 +97,12 @@ gap: 16px;
 background: rgba(204, 204, 204, 0.16);
 border: 1px solid #4F4F4F;
 border-radius: 56px;
+
+@media(max-width:1180px){
+    width: 180px;
+    top: 200px;
+    left: 10px;
+}
 `;
 
 export const Button = styled.button`
@@ -92,6 +122,12 @@ line-height: 20px;
 text-align: left;
 color: #FFFFFF;
 margin-top: 35px;
+
+@media(max-width:1180px){
+    width: 180px;
+    top: 200px;
+    left: 10px;
+}
 `;
 
 export const Text = styled.h1`
@@ -106,11 +142,20 @@ font-size: 20px;
 line-height: 100%;
 text-align: center;
 color: #000000;
+
+@media(max-width:1180px){
+    font-size: 15px;
+    margin-top: 50px;
+}
 `;
 
 export const Img = styled.img`
 position: absolute;
 margin: 8px 8px 275px 403px;
 cursor: pointer;
+
+@media(max-width:1180px){
+    display: none;
+}
 `;
 

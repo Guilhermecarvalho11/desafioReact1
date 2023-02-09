@@ -1,4 +1,4 @@
-import { Button, DivModal} from "./styled";
+import { Button, Container, DivButton, DivModal, Title} from "./styled";
 
 
 function ModalRemove(props){
@@ -10,18 +10,24 @@ function ModalRemove(props){
         alert("clicou")
     }
 
+    function closedModal() {
+        props.onClose();
+      }
+
     return(
         <>
         {props.open && (
-
-        <DivModal>
-            <h1 onClick={modaldeleteItem}>Deseja realmente deletar essa imagem?</h1>
-            <div>
-            <Button onClick={removeImg}>SIM</Button>
-            <Button>NÃO</Button>
-            </div>
-        </DivModal>
+        <Container>
+            <DivModal>
+                <Title onClick={modaldeleteItem}>Deseja realmente deletar essa imagem?</Title>
+                    <DivButton>
+                        <Button variant='primary' onClick={removeImg}>SIM</Button>
+                        <Button onClick={closedModal}>NÃO</Button>
+                    </DivButton>
+            </DivModal>
+        </Container>
         )}
+   
         </>
     )
 

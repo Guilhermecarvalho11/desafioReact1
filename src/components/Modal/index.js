@@ -5,9 +5,9 @@ import {
   InputNome,
   Button,
   ContainerInput,
+  Container,
   Text,
-  Img,
-  Overlay,
+  Img
 } from "./styled";
 import closed from "../../assets/closed.svg";
 
@@ -19,7 +19,8 @@ function Modal(props) {
   return (
     <>
       {props.open && (
-
+      <Container>
+        <ContainerInput>
           <ContainerModal>
             <Text>Inserir Nova Imagem</Text>
             <Img src={closed} onClick={closedModal} />
@@ -29,6 +30,8 @@ function Modal(props) {
               <Button>Enviar</Button>
             </ContainerInput>
           </ContainerModal>
+          </ContainerInput>
+        </Container>
 
       )}
     </>
