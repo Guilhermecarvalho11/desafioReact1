@@ -55,7 +55,6 @@
 
 .container {
   display: flex;
-  padding: 0 0px;
   justify-content: space-between;
   flex-wrap: wrap;
 

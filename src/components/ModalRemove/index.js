@@ -1,4 +1,5 @@
 import { Button, Container, DivButton, DivModal, Title} from "./styled";
+import axios from "axios";
 
 
 function ModalRemove(props){
@@ -6,13 +7,23 @@ function ModalRemove(props){
         props.onClose()
     }
 
-    function removeImg(){
-        alert("clicou")
-    }
-
     function closedModal() {
         props.onClose();
       }
+
+    async function removeImg(){
+       try{
+          await axios.delete(`https://mentoria-api.vercel.app/api/images/${props.imgToDeleteId}`)
+          window.location.reload()
+        }catch(err){
+            console.log('deu errado', err)
+        }
+
+    }
+
+
+
+
 
     return(
         <>
@@ -21,7 +32,7 @@ function ModalRemove(props){
             <DivModal>
                 <Title onClick={modaldeleteItem}>Deseja realmente deletar essa imagem?</Title>
                     <DivButton>
-                        <Button variant='primary' onClick={removeImg}>SIM</Button>
+                        <Button variant='primary' onClick={() => removeImg()}>SIM</Button>
                         <Button onClick={closedModal}>NÃO</Button>
                     </DivButton>
             </DivModal>

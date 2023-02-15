@@ -14,12 +14,9 @@ import closed from "../../assets/closed.svg";
 
 
 
-function Modal(props) {
+function ModalEdit(props) {
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
-
-
-
 
   const URL ='https://mentoria-api.vercel.app/api/images';
 
@@ -28,9 +25,9 @@ function Modal(props) {
     props.onClose();
   }
 
- async function PostAdd(){
+ async function editImg(){
 
-     await axios.post(URL, {url:link, name:name})
+     await axios.put(URL, {url:link, name:name})
       .then((response) => {
       
         console.log('deu certo')
@@ -40,7 +37,7 @@ function Modal(props) {
       })
       setName('');
       setLink('');
-      window.location.reload()
+      //window.location.reload()
 
 
 
@@ -54,12 +51,12 @@ function Modal(props) {
       <Container>
         <ContainerInput>
           <ContainerModal>
-            <Text>Inserir Nova Imagem</Text>
+            <Text>Editar Imagem</Text>
             <Img src={closed} onClick={closedModal} />
             <ContainerInput>
               <InputNome placeholder="Nome" type="text" value={name} onChange={e => {setName(e.target.value)}}/>
               <Input placeholder="Url da imagem" type="text" value={link} onChange={e => {setLink(e.target.value)}}/>
-              <Button onClick={PostAdd}>Enviar</Button>
+              <Button onClick={editImg}>Enviar</Button>
             </ContainerInput>
           </ContainerModal>
           </ContainerInput>
@@ -70,6 +67,4 @@ function Modal(props) {
   );
 }
 
-export default Modal;
-
-
+export default ModalEdit;

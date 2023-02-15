@@ -10,12 +10,20 @@ import views from "../../assets/views.svg";
 import edit from "../../assets/edit.svg";
 import Modal from "../Modal/index";
 import ModalRemove from "../ModalRemove";
+import { useEffect } from "react";
+import axios from "axios";
+import ModalEdit from "../ModalEdit";
 
 function Home() {
   const [input, setInput] = useState("");
   const [filterImg, setFilterImg] = useState(list);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalAddOpen, setIsModalAddOpen] = useState(false);
   const [isModalDeleteOpen, setIsModalDeleteOPen] = useState(false)
+  const [isModalEditOpen, setIsModalEditOpen] = useState(false)
+  const [post, setPost] = useState([])
+  const [imgToDelete, setImgToDelete] = useState();
+
+  console.log('post',post)
 
   function handleSearch() {
     const filterImgToSave = list.filter((post) =>
@@ -26,20 +34,32 @@ function Home() {
   }
 
   function handleModal() {
-    setIsModalOpen(!isModalOpen);
+    setIsModalAddOpen(!isModalAddOpen);
   }
 
-  function handleModalDelete(){
+  function handleEdit(){
+    setIsModalEditOpen(!isModalEditOpen);
+  }
+
+  function handleDelete(id){
+    setImgToDelete(id)
     setIsModalDeleteOPen(!isModalDeleteOpen)
-  }
+    console.log('setImg', setImgToDelete(id))
 
-  function deleteImg(id){
-    filterImg.splice(filterImg.indexOf(id),1)
+  } 
+
+  useEffect(() => {
+
+      axios.get('https://mentoria-api.vercel.app/api/images')
+      .then((response) => {
+          setPost(response.data)
+      })
+      .catch(() => {
+        console.log('deu errado')
+      })
   
-  }
+  }, [])
 
-
-  console.log(isModalOpen);
 
   return (
     <>
@@ -60,13 +80,13 @@ function Home() {
       </header>
 
       <div className="container">
-        {filterImg.map((lista) => {
+        {post.map((lista) => {
           return (
-            <div className="content" key={lista.id}>
+            <div className="content" key={lista._id}>
               <div className="containerImgIcons">
                 <div className="icons">
-                  <img src={edit} alt="button edit" />
-                  <img src={del} alt="button remove" onClick={() => handleModalDelete()} />
+                  <img src={edit} alt="button edit" onClick={handleEdit}/>
+                  <img src={del} alt="button remove" onClick={() => handleDelete(lista._id)} />
 
                 </div>
                 <img className="img" src={lista.url}  alt={list.name}/>
@@ -91,13 +111,19 @@ function Home() {
           +
         </button>
         <Modal
-          open={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
+          open={isModalAddOpen}
+          onClose={() => setIsModalAddOpen(false)}
+          />
 
         <ModalRemove 
           open={isModalDeleteOpen}
           onClose={() => setIsModalDeleteOPen(false)}
+          imgToDeleteId={imgToDelete}
+          />
+
+        <ModalEdit 
+            open={isModalEditOpen}
+            onClose={() => setIsModalEditOpen(false)}
           />
       </div>
     </>
