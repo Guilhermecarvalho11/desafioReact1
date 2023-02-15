@@ -22,6 +22,7 @@ function Home() {
   const [isModalEditOpen, setIsModalEditOpen] = useState(false)
   const [post, setPost] = useState([])
   const [imgToDelete, setImgToDelete] = useState();
+  const [imgToEdit, setImgToEdit] = useState()
 
   console.log('post',post)
 
@@ -37,7 +38,8 @@ function Home() {
     setIsModalAddOpen(!isModalAddOpen);
   }
 
-  function handleEdit(){
+  function handleEdit(id){
+    setImgToEdit(id)
     setIsModalEditOpen(!isModalEditOpen);
   }
 
@@ -85,7 +87,7 @@ function Home() {
             <div className="content" key={lista._id}>
               <div className="containerImgIcons">
                 <div className="icons">
-                  <img src={edit} alt="button edit" onClick={handleEdit}/>
+                  <img src={edit} alt="button edit" onClick={() => handleEdit(lista._id)}/>
                   <img src={del} alt="button remove" onClick={() => handleDelete(lista._id)} />
 
                 </div>
@@ -124,6 +126,7 @@ function Home() {
         <ModalEdit 
             open={isModalEditOpen}
             onClose={() => setIsModalEditOpen(false)}
+            imgToEditId={imgToEdit}
           />
       </div>
     </>

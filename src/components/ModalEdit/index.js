@@ -17,8 +17,7 @@ import closed from "../../assets/closed.svg";
 function ModalEdit(props) {
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
-
-  const URL ='https://mentoria-api.vercel.app/api/images';
+  console.log('name',name)
 
 
   function closedModal() {
@@ -26,22 +25,16 @@ function ModalEdit(props) {
   }
 
  async function editImg(){
-
-     await axios.put(URL, {url:link, name:name})
-      .then((response) => {
-      
-        console.log('deu certo')
-      })
-      .catch((err) => {
+    try{
+        await axios.put(`https://mentoria-api.vercel.app/api/images/${props.imgToEditId}`, {url:link, name:name})
+        console.log('props',props.imgToEditId)
+        window.location.reload();
+     }catch(err){
         console.log('deu errado' + err)
-      })
+      }
       setName('');
       setLink('');
-      //window.location.reload()
-
-
-
-      console.log('url da imagem',link,name)
+      window.location.reload()
   }
 
 
