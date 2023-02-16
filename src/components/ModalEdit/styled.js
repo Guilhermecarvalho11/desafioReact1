@@ -22,7 +22,7 @@ position: fixed;
     width: 200px;
     top: 200px;
     left: 90px;
-    height: 290px;
+    height: 270px;
 }
 `;
 
@@ -116,6 +116,10 @@ cursor: pointer;
     width: 180px;
     top: 200px;
     left: 10px;
+    height: 31px;
+    width: 180px;
+    font-size: 17px;
+
 }
 `;
 
