@@ -7,14 +7,6 @@ export const GlobalStyleFont = createGlobalStyle`
     }
 `;
 
-/* export const Overlay = styled.div`
-background-color: blue;
-opacity: 0.1; 
-width: 100vh;
-height: 100vh;
-`;*/
-
-
 export const ContainerModal = styled.div`
 display: flex;
 flex-direction: column;
@@ -67,8 +59,6 @@ margin-top: 20px;
     top: 200px;
     left: 10px;
 }
-
-
 `;
 
 export const ContainerInput = styled.div`
@@ -115,7 +105,6 @@ left: 570px;
 top: 588px;
 border-radius: 4px;
 background: #000000;
-/* font-family: 'Montserrat'; */
 font-size: 20px;
 font-weight: 600;
 line-height: 20px;

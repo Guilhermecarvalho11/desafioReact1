@@ -25,8 +25,6 @@ color: ${(props) => (props.variant === 'primary' ? 'white' : 'black')};
 width: 60px;
 border:  solid 1px black;
 border-radius: 5px;
-
-
 `;
 
 export const DivButton = styled.div`
@@ -41,7 +39,6 @@ flex-direction: row;
 margin: 20px 5px 20px 45px;
 gap: 30px;
 }
-
 `;
 
 export const Title = styled.h1`
@@ -51,7 +48,6 @@ font-weight: 600;
 font-size: 15px;
 text-align: center;
 margin: 31px 24px 0 24px;
-
 color: #000000;
 
 @media(max-width:1180px){

@@ -12,13 +12,9 @@ import {
 } from "./styled";
 import closed from "../../assets/closed.svg";
 
-
-
 function ModalEdit(props) {
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
-  console.log('name',name)
-
 
   function closedModal() {
     props.onClose();
@@ -27,7 +23,6 @@ function ModalEdit(props) {
  async function editImg(){
     try{
         await axios.put(`https://mentoria-api.vercel.app/api/images/${props.imgToEditId}`, {url:link, name:name})
-        console.log('props',props.imgToEditId)
         window.location.reload();
      }catch(err){
         console.log('deu errado' + err)
@@ -36,7 +31,6 @@ function ModalEdit(props) {
       setLink('');
       window.location.reload()
   }
-
 
   return (
     <>

@@ -1,7 +1,6 @@
 import { Button, Container, DivButton, DivModal, Title} from "./styled";
 import axios from "axios";
 
-
 function ModalRemove(props){
     function modaldeleteItem(){
         props.onClose()
@@ -21,10 +20,6 @@ function ModalRemove(props){
 
     }
 
-
-
-
-
     return(
         <>
         {props.open && (
@@ -38,11 +33,8 @@ function ModalRemove(props){
             </DivModal>
         </Container>
         )}
-   
         </>
     )
-
-
 }
 
 export default ModalRemove;

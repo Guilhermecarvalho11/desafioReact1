@@ -17,10 +17,6 @@ import closed from "../../assets/closed.svg";
 function Modal(props) {
   const [name, setName] = useState('');
   const [link, setLink] = useState('');
-
-
-
-
   const URL ='https://mentoria-api.vercel.app/api/images';
 
 
@@ -32,7 +28,6 @@ function Modal(props) {
 
      await axios.post(URL, {url:link, name:name})
       .then((response) => {
-      
         console.log('deu certo')
       })
       .catch((err) => {
@@ -41,10 +36,6 @@ function Modal(props) {
       setName('');
       setLink('');
       window.location.reload()
-
-
-
-      console.log('url da imagem',link,name)
   }
 
 

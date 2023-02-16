@@ -24,8 +24,6 @@ function Home() {
   const [imgToDelete, setImgToDelete] = useState();
   const [imgToEdit, setImgToEdit] = useState()
 
-  console.log('post',post)
-
   function handleSearch() {
     const filterImgToSave = list.filter((post) =>
       post.name.toLowerCase().includes(input.toLowerCase())
@@ -46,7 +44,6 @@ function Home() {
   function handleDelete(id){
     setImgToDelete(id)
     setIsModalDeleteOPen(!isModalDeleteOpen)
-    console.log('setImg', setImgToDelete(id))
 
   } 
 
